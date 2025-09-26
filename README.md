@@ -1,1 +1,1 @@
-# Music_Store_Analysis_Project
+# Music Store Data Analysis Project using PostgreSQL
