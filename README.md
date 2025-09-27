@@ -346,6 +346,7 @@ This project successfully demonstrates the design, implementation, and analytica
 - Performance-optimized query structures
 
 **Business Impact**
+
 This database system provides a solid foundation for:
 - Data-driven decision making for store management
 - Customer segmentation and targeted marketing campaigns
