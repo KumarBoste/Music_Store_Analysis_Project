@@ -13,3 +13,18 @@ This project helps in analyzing customer preferences, sales performance, popular
 - To track sales by genre, artist, and album.
 - To generate insights on playlists and track usage.
 - To support decision-making for business growth.
+
+## Database Schema Tables
+- Artist
+- Album
+- Track
+- Genre
+- Media_Type
+- Playlist
+- Playlist_Track
+- Customer
+- Employee
+- Invoice
+- Invoice_Line
+
+  
