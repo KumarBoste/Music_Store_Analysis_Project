@@ -139,23 +139,33 @@ SELECT * FROM customer;
 ```
 
 - 1.2 Get Tracks with Price Greater than 1.20
-- 1.3 Find all Albums by Ed Sheeran 
-- 1.4 Count Total Customers from India 
-- 1.5 Display all Employees who are Sales Representation
-  
-## Analysis-2 :
-- 2.1 Find the Total number of Tracks Per Genre
-- 2.2 Show Invoice Details along with Customer Names
-- 2.3 Find top 5 Most Expensive Tracks 
-- 2.4 Show all Playlists with Track Count 
-- 2.5 Find Customers Who Spent more than 15 
-- 2.6 Find the Best-selling Track
-- 2.7 Find Top 3 Artists by Sales Revenue 
-- 2.8 Find Top 3 Artists by Sales Revenue
+```sql
+-- 1.2 Get all tracks with price greater than 1.20
+SELECT track_name, unit_price
+FROM track
+WHERE unit_price > 1.20;
+```
 
-## Analysis-3 :
-- 3.1 Get the Top Customer by Spending 
-- 3.2 Find Employee with Maximum Customers Handled
-- 3.3 Find top 3 Customers by Invoices and Spending 
-- 3.4 Average Track Length per Genre 
-- 3.5 Rank Artists by Total Revenue 
+- 1.3 Find all Albums by Ed Sheeran
+```sql
+-- 1.3 Find all albums by 'Ed Sheeran'
+SELECT a.title 
+FROM album a
+JOIN artist ar ON a.artist_id = ar.artist_id
+WHERE artist_name = 'Ed Sheeran';
+```
+- 1.4 Count Total Customers from India
+  ```sql
+-- 1.4 Count total customers from India
+SELECT COUNT(*) 
+FROM customer
+WHERE country='India';
+```
+
+- 1.5 Display all Employees who are Sales Representation
+```sql
+-- 1.5 Display all employees who are Sales Reps
+SELECT first_name, last_name 
+FROM employee 
+WHERE title='Sales Rep';
+```
