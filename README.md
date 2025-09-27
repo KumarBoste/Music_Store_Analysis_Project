@@ -133,6 +133,11 @@ CREATE TABLE invoice_line (
 
 ## Analysis-1 :
 - 1.1 List all customers
+```sql
+-- 1. List all customers Employee
+SELECT * FROM customer;
+``
+
 - 1.2 Get Tracks with Price Greater than 1.20
 - 1.3 Find all Albums by Ed Sheeran 
 - 1.4 Count Total Customers from India 
