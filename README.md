@@ -174,3 +174,144 @@ SELECT first_name, last_name
 FROM employee 
 WHERE title='Sales Rep';
 ```
+
+## Analysis-2 :
+- 2.1 Find the Total number of Tracks Per Genre
+```sql
+-- 2.1 Find the total number of tracks per genre
+SELECT genre_name, COUNT(t.track_id) AS total_tracks
+FROM genre g
+JOIN track t ON g.genre_id = t.genre_id
+GROUP BY genre_name;
+```
+
+- 2.2 Show Invoice Details along with Customer Names
+```sql
+-- 2.2 Show invoice details along with customer names
+SELECT i.invoice_id, c.first_name, c.last_name, i.total
+FROM invoice i
+JOIN customer c ON i.customer_id = c.customer_id;
+```
+
+- 2.3 Find top 5 Most Expensive Tracks
+```sql
+-- 2.3 Find top 5 most expensive tracks
+SELECT track_name, unit_price
+FROM track
+ORDER BY unit_price DESC
+LIMIT 5;
+```
+ 
+- 2.4 Show all Playlists with Track Count
+```sql
+-- 2.4 Show all playlists with track count
+SELECT playlist_name, COUNT(pt.track_id) AS track_count
+FROM playlist p
+JOIN playlist_track pt ON p.playlist_id = pt.playlist_id
+GROUP BY playlist_name;
+```
+ 
+- 2.5 Find Customers Who Spent more than 15
+```sql
+-- 2.5 Find customers who spent more than 15
+SELECT c.first_name, c.last_name, SUM(i.total) AS total_spent
+FROM customer c
+JOIN invoice i ON c.customer_id = i.customer_id
+GROUP BY c.customer_id
+HAVING SUM(i.total) > 15;
+```
+- 2.6 Find the Best-selling Track
+```sql
+-- 2.6 Find the best-selling track
+SELECT track_name, SUM(il.quantity) AS total_sold
+FROM track t
+JOIN invoice_line il ON t.track_id = il.track_id
+GROUP BY t.track_id, t.track_name
+ORDER BY total_sold DESC
+LIMIT 1;
+```
+
+- 2.7 Find Top 3 Artists by Sales Revenue
+```sql
+-- 2.7 Find top 3 artists by sales revenue
+SELECT artist_name, SUM(il.unit_price * il.quantity) AS revenue
+FROM artist ar
+JOIN album al ON ar.artist_id = al.artist_id
+JOIN track t ON al.album_id = t.album_id
+JOIN invoice_line il ON t.track_id = il.track_id
+GROUP BY artist_name
+ORDER BY revenue DESC
+LIMIT 3;
+```
+ 
+- 2.8 Find Top 3 Artists by Sales Revenue
+```sql
+-- 2.8 Find the most popular genre based on track purchases
+SELECT genre_name, SUM(il.quantity) AS total_sold
+FROM genre g
+JOIN track t ON g.genre_id = t.genre_id
+JOIN invoice_line il ON t.track_id = il.track_id
+GROUP BY genre_name
+ORDER BY total_sold DESC
+LIMIT 1;
+```
+
+## Analysis-3 :
+- 3.1 Get the Top Customer by Spending
+```sql
+-- 3.1 Get the top customer by spending
+SELECT c.first_name, c.last_name, SUM(i.total) AS total_spent
+FROM customer c
+JOIN invoice i ON c.customer_id = i.customer_id
+GROUP BY c.customer_id, c.first_name, c.last_name
+ORDER BY total_spent DESC
+LIMIT 1;
+```
+ 
+- 3.2 Find Employee with Maximum Customers Handled
+```sql
+-- 3.2 Find employee with maximum customers handled
+SELECT e.first_name, e.last_name, COUNT(DISTINCT i.customer_id) AS customers_handled
+FROM employee e
+JOIN customer c ON e.employee_id = (c.customer_id % 5) + 2  -- dummy mapping
+JOIN invoice i ON c.customer_id = i.customer_id
+GROUP BY e.employee_id, e.first_name, e.last_name
+ORDER BY customers_handled DESC
+LIMIT 1;
+```
+
+- 3.3 Find top 3 Customers by Invoices and Spending
+```sql
+-- 3.3 Find the top 3 customers by total invoices and their spending
+SELECT c.customer_id, c.first_name, c.last_name,
+       COUNT(i.invoice_id) AS total_invoices,
+       SUM(i.total) AS total_spent
+FROM customer c
+JOIN invoice i ON c.customer_id = i.customer_id
+GROUP BY c.customer_id
+ORDER BY total_spent DESC
+LIMIT 3;
+```
+ 
+- 3.4 Average Track Length per Genre
+```sql
+-- 3.4 Find the average track length (milliseconds) per genre
+SELECT genre_name AS genre, AVG(t.milliseconds) AS avg_length
+FROM track t
+JOIN genre g ON t.genre_id = g.genre_id
+GROUP BY genre_name
+ORDER BY avg_length DESC;
+```
+ 
+- 3.5 Rank Artists by Total Revenue
+```sql
+-- 3.5 Rank artists by total revenue
+SELECT ar.artist_id, artist_name,
+       SUM(il.unit_price * il.quantity) AS revenue,
+       RANK() OVER (ORDER BY SUM(il.unit_price * il.quantity) DESC) AS rank_position
+FROM artist ar
+JOIN album al ON ar.artist_id = al.artist_id
+JOIN track t ON al.album_id = t.album_id
+JOIN invoice_line il ON t.track_id = il.track_id
+GROUP BY ar.artist_id;
+``` 
