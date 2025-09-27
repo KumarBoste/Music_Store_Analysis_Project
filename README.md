@@ -154,8 +154,9 @@ FROM album a
 JOIN artist ar ON a.artist_id = ar.artist_id
 WHERE artist_name = 'Ed Sheeran';
 ```
+
 - 1.4 Count Total Customers from India
-  ```sql
+```sql
 -- 1.4 Count total customers from India
 SELECT COUNT(*) 
 FROM customer
