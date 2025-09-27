@@ -130,3 +130,17 @@ CREATE TABLE invoice_line (
     quantity INT
 );
 ```
+## Analysis-1 :
+- 1.1 List all customers
+- 1.2 Get Tracks with Price Greater than 1.20
+- 1.3 Find all Albums by Ed Sheeran 
+- 1.4 Count Total Customers from India 
+- 1.5 Display all Employees who are Sales Representation
+  
+## Analysis-2 :
+- 2.1 Find the Total number of Tracks Per Genre
+- 2.2
+- 2.3
+- 2.4
+- 2.5
+  o	2.6 Find the Best-selling Track 
