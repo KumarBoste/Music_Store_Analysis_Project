@@ -27,4 +27,106 @@ This project helps in analyzing customer preferences, sales performance, popular
 - Invoice
 - Invoice_Line
 
-  
+## Create Database : Music_Store_Analysis
+
+```sql
+-- 1. Artist
+CREATE TABLE artist (
+    artist_id SERIAL PRIMARY KEY,
+    artist_name VARCHAR(100) NOT NULL
+);
+```
+```sql
+-- 2. Album
+CREATE TABLE album (
+    album_id SERIAL PRIMARY KEY,
+    title VARCHAR(150) NOT NULL,
+    artist_id INT REFERENCES artist(artist_id)
+);
+```
+```sql
+-- 3. Genre
+CREATE TABLE genre (
+    genre_id SERIAL PRIMARY KEY,
+    genre_name VARCHAR(100) NOT NULL
+);
+```
+```sql
+-- 4. Media Type
+CREATE TABLE media_type (
+    media_type_id SERIAL PRIMARY KEY,
+    mediatype_name VARCHAR(100) NOT NULL
+);
+```
+```sql
+-- 5. Track
+CREATE TABLE track (
+    track_id SERIAL PRIMARY KEY,
+    track_name VARCHAR(150),
+    album_id INT REFERENCES album(album_id),
+    media_type_id INT REFERENCES media_type(media_type_id),
+    genre_id INT REFERENCES genre(genre_id),
+    composer VARCHAR(100),
+    milliseconds INT,
+    bytes INT,
+    unit_price NUMERIC(5,2)
+);
+```
+```sql
+-- 6. Playlist
+CREATE TABLE playlist (
+    playlist_id SERIAL PRIMARY KEY,
+    playlist_name VARCHAR(100)
+);
+```
+```sql
+-- 7. Playlist Track
+CREATE TABLE playlist_track (
+    playlist_id INT REFERENCES playlist(playlist_id),
+    track_id INT REFERENCES track(track_id),
+    PRIMARY KEY (playlist_id, track_id)
+);
+```
+```sql
+-- 8. Customer
+CREATE TABLE customer (
+    customer_id SERIAL PRIMARY KEY,
+    first_name VARCHAR(50),
+    last_name VARCHAR(50),
+    email VARCHAR(100),
+    phone VARCHAR(20),
+    country VARCHAR(50)
+);
+```
+```sql
+-- 9. Employee
+CREATE TABLE employee (
+    employee_id SERIAL PRIMARY KEY,
+    first_name VARCHAR(50),
+    last_name VARCHAR(50),
+    title VARCHAR(50),
+    reports_to INT REFERENCES employee(employee_id)
+);
+```
+```sql
+-- 10. Invoice
+CREATE TABLE invoice (
+    invoice_id SERIAL PRIMARY KEY,
+    customer_id INT REFERENCES customer(customer_id),
+    invoice_date DATE,
+    billing_address VARCHAR(150),
+    billing_city VARCHAR(100),
+    billing_country VARCHAR(100),
+    total NUMERIC(10,2)
+);
+```
+```sql
+-- 11. Invoice Line
+CREATE TABLE invoice_line (
+    invoice_line_id SERIAL PRIMARY KEY,
+    invoice_id INT REFERENCES invoice(invoice_id),
+    track_id INT REFERENCES track(track_id),
+    unit_price NUMERIC(5,2),
+    quantity INT
+);
+```
