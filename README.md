@@ -28,7 +28,11 @@ This project helps in analyzing customer preferences, sales performance, popular
 - Invoice_Line
 
 ## Create Database : Music_Store_Analysis
-
+``` sql
+CREATE DATABASE music_store;
+USE music_store;
+```
+## Create Schema Tables :
 ```sql
 -- 1. Artist
 CREATE TABLE artist (
