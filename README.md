@@ -130,6 +130,7 @@ CREATE TABLE invoice_line (
     quantity INT
 );
 ```
+
 ## Analysis-1 :
 - 1.1 List all customers
 - 1.2 Get Tracks with Price Greater than 1.20
@@ -137,7 +138,7 @@ CREATE TABLE invoice_line (
 - 1.4 Count Total Customers from India 
 - 1.5 Display all Employees who are Sales Representation
   
-### Analysis-2 :
+## Analysis-2 :
 - 2.1 Find the Total number of Tracks Per Genre
 - 2.2 Show Invoice Details along with Customer Names
 - 2.3 Find top 5 Most Expensive Tracks 
@@ -147,4 +148,9 @@ CREATE TABLE invoice_line (
 - 2.7 Find Top 3 Artists by Sales Revenue 
 - 2.8 Find Top 3 Artists by Sales Revenue
 
-### Analysis-3 :
+## Analysis-3 :
+- 3.1 Get the Top Customer by Spending 
+- 3.2 Find Employee with Maximum Customers Handled
+- 3.3 Find top 3 Customers by Invoices and Spending 
+- 3.4 Average Track Length per Genre 
+- 3.5 Rank Artists by Total Revenue 
