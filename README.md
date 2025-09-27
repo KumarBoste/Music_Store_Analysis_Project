@@ -137,10 +137,14 @@ CREATE TABLE invoice_line (
 - 1.4 Count Total Customers from India 
 - 1.5 Display all Employees who are Sales Representation
   
-## Analysis-2 :
+### Analysis-2 :
 - 2.1 Find the Total number of Tracks Per Genre
-- 2.2
-- 2.3
-- 2.4
-- 2.5
-  o	2.6 Find the Best-selling Track 
+- 2.2 Show Invoice Details along with Customer Names
+- 2.3 Find top 5 Most Expensive Tracks 
+- 2.4 Show all Playlists with Track Count 
+- 2.5 Find Customers Who Spent more than 15 
+- 2.6 Find the Best-selling Track
+- 2.7 Find Top 3 Artists by Sales Revenue 
+- 2.8 Find Top 3 Artists by Sales Revenue
+
+### Analysis-3 :
