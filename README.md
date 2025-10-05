@@ -7,7 +7,7 @@ The **Music Store Analysis** project simulates a real-world database for an onli
 It contains information about artists, albums, tracks, playlists, customers, employees, invoices, and sales.
 This project helps in analyzing customer preferences, sales performance, popular tracks, and employee management.
 
-### Objective
+## Objective
 - To design a relational database for managing a music store.
 - To analyze customer purchasing patterns.
 - To track sales by genre, artist, and album.
