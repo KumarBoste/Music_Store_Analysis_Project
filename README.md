@@ -353,3 +353,7 @@ This database system provides a solid foundation for :
 - Inventory optimization based on sales trends
 - Revenue growth strategies through popular content identification
 - Operational efficiency improvements
+
+## Database & Tools
+- Postgre SQL
+- PgAdmin4 
