@@ -1,0 +1,66 @@
+🎵 Slide 1: Title Slide
+Question: What is this project about?
+Answer: A SQL-based analysis of a music store database to uncover insights about customers, sales, artists, and genres.
+(Include: “Music Store Analysis” + your name)
+
+💡 Slide 2: Why this project?
+Q: Why did we choose to analyze a music store?
+A: The music industry generates massive data — analyzing it helps identify trends, top artists, and customer behaviors.
+
+🧠 Slide 3: What is the goal?
+Q: What did we aim to achieve?
+A: To understand customer spending, sales performance, and popular tracks using SQL queries.
+
+🧩 Slide 4: How is the database structured?
+Q: What does the database contain?
+A: 11 interconnected tables — Artist, Album, Track, Genre, Playlist, Customer, Employee, Invoice, and more.
+Q: Why is this important?
+A: Relationships between tables help connect customer data, sales, and music content.
+
+⚙️ Slide 5: What tools did we use?
+Q: Which tools were used for analysis?
+A: SQL with SQLite/MySQL and Excel/Power BI for visualization.
+Q: What was the approach?
+A: Wrote SQL queries to extract, join, and summarize information for insights.
+
+📊 Slide 6: What basic analyses were done?
+Q: What did we find in Analysis 1?
+A:Customer list for segmentation
+Premium tracks priced >1.20
+Albums by Ed Sheeran
+Insight: Helps with marketing and pricing strategy.
+
+💰 Slide 7: What about sales and genres?
+Q: What were the key findings?
+A:
+Most tracks are concentrated in a few genres
+Top 5 expensive tracks drive premium revenue
+Top 3 artists contribute the most to sales
+Insight: Supports better catalog and marketing planning.
+
+👥 Slide 8: Who are the top customers and employees?
+Q: Who spends the most?
+A: The top customer contributes the highest total revenue.
+Q: Who handles most customers?
+A: One employee stands out for managing the maximum clients.
+Insight: Useful for loyalty programs and performance rewards.
+
+🔍 Slide 9: What insights did we gain overall?
+A:
+Pop genre is most popular
+Ed Sheeran and other top artists drive major sales
+Indian customers form a strong user base
+Sales reps influence revenue significantly
+
+🚀 Slide 10: What are our recommendations?
+A:
+Promote top genres and artists
+Offer loyalty rewards for top customers
+Recognize high-performing employees
+Expand catalog diversity
+
+🎯 Slide 11: What’s next?
+A:
+Add dashboards for visualization
+Use predictive analysis for customer trends
+Apply insights to real music platforms
